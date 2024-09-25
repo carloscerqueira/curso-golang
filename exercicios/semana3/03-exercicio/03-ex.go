@@ -32,13 +32,9 @@ func main() {
 }
 
 func calculaMedia(notas []float64) float64 {
-	return calculaSoma(notas) / float64(len(notas))
-}
-
-func calculaSoma(notas []float64) float64 {
 	soma := 0.0
 	for _, nota := range notas {
 		soma += nota
 	}
-	return soma
+	return soma / float64(len(notas))
 }
