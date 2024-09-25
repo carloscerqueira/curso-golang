@@ -26,14 +26,18 @@ func main() {
 			8.3,
 		},
 	}
-	var media, soma float64
 	for nome, notas := range mapNotas {
-		media = 0.0
-		soma = 0.0
-		for _, nota := range notas {
-			soma += nota
-		}
-		media = soma / float64(len(notas))
-		fmt.Printf("Nome: %s, Média: %.2f\n", nome, media)
+		fmt.Printf("Nome: %s, Média: %.2f\n", nome, calculaMedia(notas))
 	}
+}
+
+func calculaMedia(notas []float64) float64 {
+	media := 0.0
+	for i, soma := 0, 0.0; i < len(notas); i++ {
+		soma += notas[i]
+		if i == len(notas)-1 {
+			media = soma / float64(len(notas))
+		}
+	}
+	return media
 }
