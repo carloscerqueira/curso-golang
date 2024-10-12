@@ -26,6 +26,24 @@ func imprimeTipoDado(valores ...interface{}) {
 	}
 }
 
+func imprimeTipoDadoMelhorado(valores ...interface{}) {
+	for _, v := range valores {
+		switch valor := v.(type) {
+		case string:
+			fmt.Printf("%v é uma %T\n", v, valor)
+		case int:
+			fmt.Printf("%v é uma %T\n", v, valor)
+		case float64:
+			fmt.Printf("%v é uma %T\n", v, valor)
+		case bool:
+			fmt.Printf("%v é uma %T\n", v, valor)
+		default:
+			fmt.Printf("%v é de um tipo não mapeado %T", v, valor)
+		}
+	}
+}
+
 func main() {
-	imprimeTipoDado("String", 42, 42.50, false)
+	imprimeTipoDado("String", 42, 42.50, false, uint(23))
+	imprimeTipoDadoMelhorado("String", 42, 42.50, false, uint(23))
 }
