@@ -1,0 +1,9 @@
+Para rodar os testes no terminal, posso ir até a pasta onde quero testar e rodar:
+go test
+ou, com mais detalhes:
+go test -v
+
+Para rodar tudo dentro da pasta testes, no terminal, basta ir até a pasta testes e rodar:
+go test ./...
+
+Além disso, posso acrescentar o código t.Parallel() na primeira linha do teste para informar que aquele teste pode ser executado de forma paralela
