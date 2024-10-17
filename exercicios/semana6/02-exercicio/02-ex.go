@@ -3,11 +3,11 @@ package main
 
 import "fmt"
 
-func producer(mensagem string, ch chan string) {
+func producer(mensagem string, ch chan<- string) { // canal apenas recebe dados
 	ch <- mensagem
 }
 
-func consumer(ch chan string) {
+func consumer(ch <-chan string) { // canal apenas envia dados
 	fmt.Println(<-ch)
 }
 
