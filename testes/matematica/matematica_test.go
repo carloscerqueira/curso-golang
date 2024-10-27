@@ -2,7 +2,7 @@ package matematica
 
 import "testing"
 
-const erroPadrao = "Valor esperado %v, mas o resultado encotnrado foi %v."
+const erroPadrao = "Valor esperado %v, mas o resultado encotrado foi %v."
 
 func TestMedia(t *testing.T) {
 	valorEsperado := 7.28
